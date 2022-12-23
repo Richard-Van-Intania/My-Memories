@@ -17,7 +17,7 @@ class MemoryBoardAdaptor(private val context: Context, private val boardSize: Bo
     private const val MARGIN_SIZE = 10
   }
 
-  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder { 
     val cardWidth: Int = parent.width / boardSize.getWidth() - (2 * MARGIN_SIZE)
     val cardHeight: Int = parent.height / boardSize.getHeight() - (2 * MARGIN_SIZE)
     val cardSideLength: Int = min(cardWidth, cardHeight)

@@ -13,15 +13,17 @@ class MainActivity : AppCompatActivity() {
   private lateinit var textViewMove: TextView
   private lateinit var textViewPair: TextView
 
-  private var boardSize: BoardSize = BoardSize.EASY
+  private var boardSize: BoardSize = BoardSize.HARD
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
-    recyclerView = findViewById(R.id.recyclerView)
     textViewMove = findViewById(R.id.textViewMove)
     textViewPair = findViewById(R.id.textViewPairs)
 
+    recyclerView = findViewById(R.id.recyclerView)
+
+    // set adapter
     recyclerView.adapter = MemoryBoardAdaptor(this, boardSize)
     recyclerView.setHasFixedSize(true)
     recyclerView.layoutManager = GridLayoutManager(this, boardSize.getWidth())
